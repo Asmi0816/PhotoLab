@@ -53,13 +53,11 @@ public class IntArrayWorker
 	  int total = 0;
 	  for (int row = 0; row < matrix.length; row++)
 	  {
+		
 		  
-		  for (int col = 0; col < colNumber + 1; col++)
-		  {
+		  total += matrix[row][colNumber];
 		  
-		  total += matrix[row][col];
 		  
-		  }
 	  }
 	  
 	  return total;
