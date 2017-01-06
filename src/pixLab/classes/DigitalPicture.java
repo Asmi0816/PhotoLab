@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
  * it from a file name or image.  You can show a picture.  You can 
  * explore a picture.  You can create a new image for it.
  * 
- * @author Barb Ericson ericson@cc.gatech.edu
+ * @author Arick Smith
  */
 public interface DigitalPicture 
 {
