@@ -344,6 +344,7 @@ public class SimplePicture implements DigitalPicture
    return pixelArray;
  }
  
+ 
  /**
   * Method to get a two-dimensional array of Pixels for this simple picture
   * @return a two-dimensional array of Pixel objects in row-major order.
