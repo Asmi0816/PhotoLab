@@ -18,6 +18,14 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture money = new Picture("Earth.jpeg");
+	  money.explore();
+	  money.mirrorDiagonal();
+	  money.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -38,6 +46,13 @@ public class PictureTester
 	  Picture lion = new Picture("femaleLionAndHall.jpg");
 	  lion.explore();
 	  lion.mirrorHorizontal();
+	  lion.explore();
+  }
+  public static void testMirrorDiagonalOther()
+  {
+	  Picture lion = new Picture("Earth.jpeg");
+	  lion.explore();
+	  lion.mirrorDiagonalOther();
 	  lion.explore();
   }
   public static void testMirrorHorizontalTopToBottom()
@@ -90,7 +105,9 @@ public class PictureTester
     //testMirrorVertical();
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
-    testMirrorHorizontalTopToBottom();
+    //testMirrorHorizontalTopToBottom();
+    //testMirrorDiagonal();
+    testMirrorDiagonalOther();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
