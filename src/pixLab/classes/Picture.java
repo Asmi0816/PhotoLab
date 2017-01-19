@@ -303,6 +303,30 @@ public class Picture extends SimplePicture
 	      }
 	    }
   }
+  public void monsterSnowman()
+  {
+	  int mirrorPoint = 200;
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int count = 0;
+	    Pixel[][] pixels = this.getPixels2D();
+	    
+	    // loop through the rows
+	    for (int row = 150; row < 196; row++)
+	    {
+	      // loop from 13 to just before the mirror point
+	      for (int col = 103; col < 192; col++)
+	      {
+	        
+	        leftPixel = pixels[row][col];      
+	        rightPixel = pixels[row - 20][mirrorPoint - col + mirrorPoint];
+	        rightPixel.setColor(leftPixel.getColor());
+	        rightPixel = pixels[row + 40][mirrorPoint - col + mirrorPoint];
+	        rightPixel.setColor(leftPixel.getColor());
+	        
+	      }
+	    }
+  }
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
