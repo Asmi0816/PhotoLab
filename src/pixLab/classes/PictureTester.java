@@ -50,8 +50,19 @@ public class PictureTester
   }
   public static void testMirrorDiagonalOther()
   {
-	  Picture lion = new Picture("Earth.jpeg");
+	  Picture lion = new Picture("octo.jpeg");
 	  lion.explore();
+	  lion.mirrorDiagonalOther();
+	  lion.explore();
+	  lion.mirrorDiagonalOther();
+	  lion.mirrorDiagonal();
+	  lion.mirrorHorizontal();
+	  
+	  lion.mirrorDiagonalOther();
+	  lion.mirrorDiagonal();
+	  lion.mirrorVertical();
+	  lion.mirrorDiagonalOther();
+	  lion.mirrorDiagonal();
 	  lion.mirrorDiagonalOther();
 	  lion.explore();
   }
