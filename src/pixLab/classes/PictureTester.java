@@ -50,14 +50,13 @@ public class PictureTester
   }
   public static void testMirrorDiagonalOther()
   {
-	  Picture lion = new Picture("octo.jpeg");
+	  Picture lion = new Picture("seagull.jpg");
 	  lion.explore();
 	  lion.mirrorDiagonalOther();
 	  lion.explore();
 	  lion.mirrorDiagonalOther();
 	  lion.mirrorDiagonal();
 	  lion.mirrorHorizontal();
-	  
 	  lion.mirrorDiagonalOther();
 	  lion.mirrorDiagonal();
 	  lion.mirrorVertical();
@@ -68,9 +67,16 @@ public class PictureTester
   }
   public static void testMirrorHorizontalTopToBottom()
   {
-	  Picture kitten2 = new Picture("kitten2.jpg");
+	  Picture kitten2 = new Picture("seagull.jpg");
 	  kitten2.explore();
 	  kitten2.mirrorHorizontalTopToBottom();
+	  kitten2.explore();
+  }
+  public static void testMirrorSeagull()
+  {
+	  Picture kitten2 = new Picture("seagull.jpg");
+	  kitten2.explore();
+	  kitten2.mirrorSeagull();
 	  kitten2.explore();
   }
   
@@ -117,8 +123,9 @@ public class PictureTester
     //testMirrorVerticalRightToLeft();
     //testMirrorHorizontal();
     //testMirrorHorizontalTopToBottom();
+	  testMirrorSeagull();
     //testMirrorDiagonal();
-    testMirrorDiagonalOther();
+    //testMirrorDiagonalOther();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
