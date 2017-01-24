@@ -20,7 +20,7 @@ public class PictureTester
   
   public static void testRickRolled()
   {
-	  Picture beach = new Picture("octo.jpeg");
+	  Picture beach = new Picture("swan.jpg");
 	    beach.explore();
 	    beach.rickRolled(10);
 	    beach.explore();
@@ -108,7 +108,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("octo.jpeg");
+    Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
