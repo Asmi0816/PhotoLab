@@ -327,6 +327,31 @@ public class Picture extends SimplePicture
 	      }
 	    }
   }
+  public void rickRolled(int edgeDist)
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel secondRightPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+    Color secondRightColor = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; col < pixels[0].length-2; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+        secondRightPixel = pixels[row][col+2];
+        rightColor = rightPixel.getColor();
+        secondRightColor = secondRightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > edgeDist && leftPixel.colorDistance(secondRightColor) > edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()

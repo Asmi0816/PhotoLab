@@ -18,6 +18,14 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testRickRolled()
+  {
+	  Picture beach = new Picture("octo.jpeg");
+	    beach.explore();
+	    beach.rickRolled(10);
+	    beach.explore();
+  }
+  
   public static void testMirrorDiagonal()
   {
 	  Picture money = new Picture("Earth.jpeg");
@@ -100,7 +108,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("octo.jpeg");
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -125,6 +133,7 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
+	testRickRolled();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
@@ -141,7 +150,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
