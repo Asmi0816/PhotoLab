@@ -67,6 +67,9 @@ public class PictureTester
 	  lion.mirrorHorizontal();
 	  lion.mirrorDiagonalOther();
 	  lion.mirrorDiagonal();
+	  lion.mirrorHorizontalTopToBottom();
+	  lion.mirrorVerticalRightToLeft();
+	  lion.monsterSnowman();
 	  lion.mirrorVertical();
 	  lion.mirrorDiagonalOther();
 	  lion.mirrorDiagonal();
@@ -104,6 +107,12 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+  public static void masterFile()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.masterFile();
+    canvas.explore();
+  }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -133,7 +142,7 @@ public class PictureTester
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-	testRickRolled();
+	//testRickRolled();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
@@ -143,6 +152,7 @@ public class PictureTester
 	//testMonsterSnowman();
 	//testMirrorSeagull();
     //testMirrorDiagonal();
+	masterFile();
     //testMirrorDiagonalOther();
     //testMirrorTemple();
     //testMirrorArms();
@@ -150,7 +160,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

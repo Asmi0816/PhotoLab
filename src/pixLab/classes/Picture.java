@@ -166,6 +166,11 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void glichArt()
+  {
+	  
+  }
+  
   public void mirrorDiagonal()
   {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -303,6 +308,24 @@ public class Picture extends SimplePicture
 	      }
 	    }
   }
+  public void thingForCollage(Picture fromPic, 
+          int startRow, int startCol, int endRow, int endCol)
+{
+	  Pixel fromPixel = null;
+	  Pixel toPixel = null;
+	  Pixel[][] toPixels = this.getPixels2D();
+	  Pixel[][] fromPixels = fromPic.getPixels2D();
+	  
+	  for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length - 40  && toRow < toPixels.length -40; fromRow++, toRow++)
+	  {
+		  for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length && toCol < toPixels[0].length; fromCol++, toCol++)
+		  {
+			  fromPixel = fromPixels[fromRow][fromCol];
+			  toPixel = toPixels[toRow][toCol];
+			  toPixel.setColor(fromPixel.getColor());
+		  }
+	  }   
+}
   public void monsterSnowman()
   {
 	  int mirrorPoint = 200;
@@ -351,6 +374,23 @@ public class Picture extends SimplePicture
       }
     }
   }
+  public void masterFile()
+  {
+    Picture koala = new Picture("koala.jpg");
+    Picture moon = new Picture("blueMotorcycle.jpg");
+   
+    this.copy(moon,0,0);
+    this.copy(koala,200,0);
+    Picture moto = new Picture(moon);
+    moto.thingForCollage(moto, 24, 44, 45, 68);
+    this.copy(moto,300,0);
+    
+  
+    this.mirrorVertical();
+    
+  }
+  
+  
   
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
@@ -390,9 +430,7 @@ public class Picture extends SimplePicture
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
     Pixel[][] fromPixels = fromPic.getPixels2D();
-    for (int fromRow = 0, toRow = startRow; 
-         fromRow < fromPixels.length &&
-         toRow < toPixels.length; 
+    for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length && toRow < toPixels.length; 
          fromRow++, toRow++)
     {
       for (int fromCol = 0, toCol = startCol; 
