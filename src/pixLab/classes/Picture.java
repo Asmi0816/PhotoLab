@@ -316,9 +316,9 @@ public class Picture extends SimplePicture
 	  Pixel[][] toPixels = this.getPixels2D();
 	  Pixel[][] fromPixels = fromPic.getPixels2D();
 	  
-	  for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length - 40  && toRow < toPixels.length -40; fromRow++, toRow++)
+	  for (int fromRow = 0, toRow = startRow; fromRow < fromPixels.length && toRow < endRow; fromRow++, toRow++)
 	  {
-		  for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length && toCol < toPixels[0].length; fromCol++, toCol++)
+		  for (int fromCol = 0, toCol = startCol; fromCol < fromPixels[0].length && toCol < endCol; fromCol++, toCol++)
 		  {
 			  fromPixel = fromPixels[fromRow][fromCol];
 			  toPixel = toPixels[toRow][toCol];
@@ -381,8 +381,8 @@ public class Picture extends SimplePicture
    
     this.copy(moon,0,0);
     this.copy(koala,200,0);
-    Picture moto = new Picture(moon);
-    moto.thingForCollage(moto, 24, 44, 45, 68);
+    Picture moto = new Picture("butterfly1.jpg");
+    moto.thingForCollage(new Picture("swan.jpg"), 24, 2, 79, 271);
     this.copy(moto,300,0);
     
   
