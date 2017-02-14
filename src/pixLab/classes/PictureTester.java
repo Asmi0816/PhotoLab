@@ -18,6 +18,15 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void glitchRun()
+  {
+	  Picture glitchPic = new Picture("mcdonalds.jpg");
+	  glitchPic.explore();
+	  glitchPic.glichArt();
+	  glitchPic.explore();
+	  
+  }
+  
   public static void testRickRolled()
   {
 	  Picture beach = new Picture("swan.jpg");
@@ -75,6 +84,14 @@ public class PictureTester
 	  lion.mirrorDiagonal();
 	  lion.mirrorDiagonalOther();
 	  lion.explore();
+  }
+  
+  public static void valentines()
+  {
+	  Picture valen = new Picture("mcdonalds.jpg");
+	  valen.valentines();
+	  valen.explore();
+	  valen.write("ValMeme");
   }
   public static void testMirrorHorizontalTopToBottom()
   {
@@ -152,7 +169,9 @@ public class PictureTester
 	//testMonsterSnowman();
 	//testMirrorSeagull();
     //testMirrorDiagonal();
-	masterFile();
+	//masterFile();
+	//valentines();
+	  glitchRun();
     //testMirrorDiagonalOther();
     //testMirrorTemple();
     //testMirrorArms();

@@ -99,6 +99,19 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void valentines()
+  {
+	  Picture valentines = new Picture("Burger.png");
+	  Picture v2 = new Picture("code.png");
+	  this.copy(valentines, 50, 100);
+	  this.copy(v2, 50,1300);
+	  valentines.keepOnlyBlue();
+	  this.addMessage("<=>><=<<>>=<<==>><<><>><>><><======><<>><<<>>>><==><><><><><><><>===<><>==", 550, 150);
+	  this.addMessage("My love for computer programming", 0, 30);
+	  this.addMessage("Is only paralleled for my love of McDonalds", 1400, 900);
+	  
+  }
+  
   public void keepOnlyBlue()
   {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -168,7 +181,60 @@ public class Picture extends SimplePicture
   
   public void glichArt()
   {
-	  
+	 
+	  Picture glitchy = new Picture("Burger.png");
+	  this.copy(glitchy, 50,30);
+	  Pixel currentPixel = null;
+	  Pixel [][] myPixels = this.getPixels2D();
+	  for(int row = 0; row < myPixels.length; row++)
+	  {
+		  for(int col = 0; col < myPixels[0].length; col++)
+		  {
+			  int blue = (int)(Math.random() * 256);
+			  currentPixel = myPixels[row][col];
+			  currentPixel.setBlue(blue);
+		  }
+	  }
+	  this.mirrorVertical();
+	  this.mirrorHorizontalTopToBottom();
+	  this.mirrorRandom();
+	  this.mirrorRandom();
+	  this.mirrorRandom();
+	  this.mirrorRandom();
+	  this.mirrorRandom();
+  }
+  
+  public void mirrorRandom()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel leftPixel = null;
+	  int mirrorPoint = (int)(Math.random() * 1500);
+	  Pixel rightPixel = null;
+	  int funRow = (int)(Math.random() * 799);
+	  int realRow = (int)(Math.random() * 1200);
+	  int funCol = (int)(Math.random() * 100);
+	  int realCol = (int)(Math.random() * 1300);
+	  for(int row = funRow; row < realRow ; row++)
+	  {
+		  for(int col = funCol; col < realCol; col++)
+		  {
+			  	leftPixel = pixels[row][col];   
+			  	if(mirrorPoint - col + mirrorPoint > 0 && mirrorPoint - col + mirrorPoint < 1200)
+			  	{
+		        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
+			  	}
+			  	else
+			  	{
+			  		rightPixel = pixels[row][col]; 
+			  	}
+		        int blue = (int)(Math.random() * 256);
+		        int green = (int)(Math.random() * 256);
+		        int red = (int)(Math.random() * 256);
+		        rightPixel.setRed(red);
+		        rightPixel.setBlue(green);
+		        rightPixel.setGreen(blue);
+		  }
+	  }
   }
   
   public void mirrorDiagonal()
@@ -386,8 +452,9 @@ public class Picture extends SimplePicture
     moto.thingForCollage(new Picture("swan.jpg"), 24, 2, 79, 271);
     this.copy(moto,300,0);
     
-  
+  this.mirrorHorizontal();
     this.mirrorVertical();
+    this.mirrorTemple();
     
   }
   
