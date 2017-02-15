@@ -213,13 +213,13 @@ public class Picture extends SimplePicture
 	  int funRow = (int)(Math.random() * 799);
 	  int realRow = (int)(Math.random() * 1200);
 	  int funCol = (int)(Math.random() * 100);
-	  int realCol = (int)(Math.random() * 1300);
+	  int realCol = (int)(Math.random() * 1600);
 	  for(int row = funRow; row < realRow ; row++)
 	  {
 		  for(int col = funCol; col < realCol; col++)
 		  {
-			  	leftPixel = pixels[row][col];   
-			  	if(mirrorPoint - col + mirrorPoint > 0 && mirrorPoint - col + mirrorPoint < 1200)
+			  	leftPixel = pixels[row][col -1];   
+			  	if(mirrorPoint - col + mirrorPoint > 0 && mirrorPoint - col + mirrorPoint < 1900)
 			  	{
 		        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 			  	}
