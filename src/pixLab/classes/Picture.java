@@ -219,7 +219,7 @@ public class Picture extends SimplePicture
 		  for(int col = funCol; col < realCol; col++)
 		  {
 			  	leftPixel = pixels[row][col -1];   
-			  	if(mirrorPoint - col + mirrorPoint > 0 && mirrorPoint - col + mirrorPoint < 1900)
+			  	if(mirrorPoint -  col + mirrorPoint > 0 && mirrorPoint - col + mirrorPoint < 1900)
 			  	{
 		        rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 			  	}
