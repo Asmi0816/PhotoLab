@@ -617,6 +617,35 @@ public class Picture extends SimplePicture
 	  
   }
   
+  public void greenScreen(Picture hidden2)
+  {
+	  Pixel [][] currentPicture = this.getPixels2D();
+	  Pixel [][] hiddenPicture = hidden2.getPixels2D();
+	  Pixel currentPixel = null;
+	  Pixel hiddenPixel = null;
+	  for(int row = 0; row < currentPicture.length; row++)
+	  {
+		  for(int col = 0; col< currentPicture[0].length; col++)
+		  {
+			  hiddenPixel = hiddenPicture[row][col];
+			  if(hiddenPicture.length >= currentPicture.length && hiddenPicture[0].length >= currentPicture[0].length)
+			  {
+			  currentPixel = currentPicture[row][col];
+			  if(hiddenPixel.getRed() <= 255 && hiddenPixel.getRed() >= 235 && hiddenPixel.getGreen() >= 251 
+					  && hiddenPixel.getGreen() <= 231 && hiddenPixel.getBlue() >= 212 && hiddenPixel.getBlue() <= 232)
+			  {
+				  		hiddenPixel.setRed(currentPixel.getRed());
+				  		hiddenPixel.setBlue(currentPixel.getBlue());
+				  		hiddenPixel.setGreen(currentPixel.getGreen());
+			  }
+			  }
+		  }
+	  }
+	  this.write("encrypted.png");
+	  this.explore();
+	  
+  }
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
