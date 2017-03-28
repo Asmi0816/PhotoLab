@@ -147,6 +147,16 @@ public class PictureTester
 	  kitten2.explore();
   }
   
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("hidden2.png");
+	  source.explore();
+	  Picture hidden = new Picture("Hidden1.png");
+	  hidden.explore();
+	  source.encode(hidden);
+	  source.decode();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -171,7 +181,7 @@ public class PictureTester
     //testMirrorDiagonal();
 	//masterFile();
 	//valentines();
-	  glitchRun();
+	//  glitchRun();
     //testMirrorDiagonalOther();
     //testMirrorTemple();
     //testMirrorArms();
@@ -187,5 +197,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  testSteganography();
   }
 }
