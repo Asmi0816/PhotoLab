@@ -157,6 +157,17 @@ public class PictureTester
 	  source.decode();
   }
   
+  public static void testGreenScreen()
+  {
+	  Picture source = new Picture("Background.jpg");
+	  source.explore();
+	  Picture hidden = new Picture("finally.jpg");
+	  hidden.explore();
+	  source.greenScreen(hidden);
+	
+	  
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -197,6 +208,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-	  testSteganography();
+	  //testSteganography();
+	  testGreenScreen();
   }
 }

@@ -1,11 +1,6 @@
 package pixLab.classes;
-import java.awt.*;
-import java.awt.font.*;
-import java.awt.geom.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
-import java.text.*;
-import java.util.*;
-import java.util.List; // resolves problem with java.awt.List and java.util.List
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -617,6 +612,8 @@ public class Picture extends SimplePicture
 	  
   }
   
+ 
+  
   public void greenScreen(Picture hidden2)
   {
 	  Pixel [][] currentPicture = this.getPixels2D();
@@ -627,17 +624,18 @@ public class Picture extends SimplePicture
 	  {
 		  for(int col = 0; col< currentPicture[0].length; col++)
 		  {
-			  hiddenPixel = hiddenPicture[row][col];
-			  if(hiddenPicture.length >= currentPicture.length && hiddenPicture[0].length >= currentPicture[0].length)
-			  {
+			 
 			  currentPixel = currentPicture[row][col];
-			  if(hiddenPixel.getRed() <= 255 && hiddenPixel.getRed() >= 235 && hiddenPixel.getGreen() >= 251 
-					  && hiddenPixel.getGreen() <= 231 && hiddenPixel.getBlue() >= 212 && hiddenPixel.getBlue() <= 232)
+			  
+			  if(hiddenPicture.length > row && hiddenPicture[0].length  > col)
 			  {
-				  		hiddenPixel.setRed(currentPixel.getRed());
-				  		hiddenPixel.setBlue(currentPixel.getBlue());
-				  		hiddenPixel.setGreen(currentPixel.getGreen());
-			  }
+			  		hiddenPixel = hiddenPicture[row][col];
+				  	if(hiddenPixel.getRed() <= 240 && hiddenPixel.getRed() >= 190 && hiddenPixel.getGreen() >= 190
+				  			&& hiddenPixel.getGreen() <= 210 && hiddenPixel.getBlue() >= 180 && hiddenPixel.getBlue() <= 210)
+				  	{
+				  		currentPixel.setColor(hiddenPixel.getColor());
+				  		
+				  	}
 			  }
 		  }
 	  }
